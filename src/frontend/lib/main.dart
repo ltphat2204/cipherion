@@ -7,6 +7,7 @@ import 'package:music_lyrica/features/authentication/screens/login/login_screen.
 import 'package:music_lyrica/features/music/screens/following_artist_screen.dart';
 import 'package:music_lyrica/features/music/screens/recent_listen_screen.dart';
 import 'package:music_lyrica/utils/theme/app_theme.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() {
   runApp(const MainApp());
