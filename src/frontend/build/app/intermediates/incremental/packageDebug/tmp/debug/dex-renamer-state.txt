@@ -1,4 +1,0 @@
-#Mon Jul 15 14:23:14 ICT 2024
-base.0=D\:\\mobile_Dev\\Lyrica\\music_lyrica\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
