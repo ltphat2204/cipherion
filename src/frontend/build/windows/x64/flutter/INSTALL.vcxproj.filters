@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\mobile_Dev\Lyrica\music_lyrica\build\windows\x64\CMakeFiles\a76780f6b66e0491c88821c81925015e\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{64B6B0D5-0112-38B5-B74B-371D6FCBEED7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

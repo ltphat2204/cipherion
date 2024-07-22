@@ -1,0 +1,28 @@
+^D:\MOBILE_DEV\LYRICA\MUSIC_LYRICA\BUILD\WINDOWS\X64\CMAKEFILES\86A4FB295F1688848427F24D735C6226\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\flutter_windows_3.19.3-stable\flutter PROJECT_DIR=D:\mobile_Dev\Lyrica\music_lyrica FLUTTER_ROOT=C:\flutter_windows_3.19.3-stable\flutter FLUTTER_EPHEMERAL_DIR=D:\mobile_Dev\Lyrica\music_lyrica\windows\flutter\ephemeral PROJECT_DIR=D:\mobile_Dev\Lyrica\music_lyrica FLUTTER_TARGET=D:\mobile_Dev\Lyrica\music_lyrica\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC8yZTRiYTljNmZiNDk5Y2NkNGU4MTQyMDU0Mzc4M2NjNzI2N2FlNDA2Lw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\mobile_Dev\Lyrica\music_lyrica\.dart_tool\package_config.json C:/flutter_windows_3.19.3-stable/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\MOBILE_DEV\LYRICA\MUSIC_LYRICA\BUILD\WINDOWS\X64\CMAKEFILES\A76780F6B66E0491C88821C81925015E\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\MOBILE_DEV\LYRICA\MUSIC_LYRICA\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/mobile_Dev/Lyrica/music_lyrica/windows -BD:/mobile_Dev/Lyrica/music_lyrica/build/windows/x64 --check-stamp-file D:/mobile_Dev/Lyrica/music_lyrica/build/windows/x64/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
