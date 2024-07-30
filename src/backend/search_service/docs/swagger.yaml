@@ -1,0 +1,206 @@
+basePath: /v1
+definitions:
+  Global.ErrorResponse:
+    properties:
+      data:
+        properties:
+          err: {}
+        type: object
+      status:
+        example: 500
+        type: integer
+    type: object
+  Global.SongResponse:
+    properties:
+      data:
+        properties:
+          results:
+            items:
+              $ref: '#/definitions/Models.Song'
+            type: array
+        type: object
+      status:
+        example: 200
+        type: integer
+    type: object
+  Global.StatusResponse:
+    properties:
+      data:
+        properties:
+          message:
+            type: string
+          success:
+            type: boolean
+        type: object
+      status:
+        example: 200
+        type: integer
+    type: object
+  Models.Song:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact: {}
+  description: This is Lyrica serverAPI.
+  termsOfService: http://swagger.io/terms/
+  title: Lyrica API
+  version: "1.0"
+paths:
+  /song/autocomplete:
+    get:
+      consumes:
+      - application/json
+      description: Autocomplete searching phrase
+      operationId: autocomplete-song
+      parameters:
+      - description: Searching name
+        in: query
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Global.SongResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Global.ErrorResponse'
+      summary: Autocomplete searching name
+      tags:
+      - song
+  /song/create:
+    post:
+      consumes:
+      - application/json
+      description: Insert a song
+      operationId: insert-song
+      parameters:
+      - description: Song name
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      - description: Song ID
+        in: body
+        name: id
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Global.StatusResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Global.ErrorResponse'
+      summary: Insert a song to Elasticsearch
+      tags:
+      - song
+  /song/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a song by its ID
+      operationId: delete-song
+      parameters:
+      - description: Deleting Song ID
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Global.StatusResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Global.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Global.ErrorResponse'
+      summary: Delete a song
+      tags:
+      - song
+  /song/search:
+    get:
+      consumes:
+      - application/json
+      description: Search songs by their name
+      operationId: search-songs-by-name
+      parameters:
+      - description: Searching name
+        in: query
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Global.SongResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Global.ErrorResponse'
+      summary: Searching for songs
+      tags:
+      - song
+  /song/update/name:
+    patch:
+      consumes:
+      - application/json
+      description: Update a song's name by its ID
+      operationId: update-song
+      parameters:
+      - description: Song ID
+        in: body
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: New Song's name
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/Global.StatusResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/Global.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/Global.ErrorResponse'
+      summary: Update a song's name
+      tags:
+      - song
+swagger: "2.0"

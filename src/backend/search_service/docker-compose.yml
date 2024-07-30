@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  elasticsearch:
+    container_name: es-container
+    build: ./deployment/es
+    environment:
+      - xpack.security.enabled=false
+      - "discovery.type=single-node"
+    networks:
+      - es-net
+    ports:
+      - 9200:9200
+networks:
+  es-net:
+    driver: bridge
