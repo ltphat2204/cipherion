@@ -1,3 +1,22 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<div class="flex w-screen h-screen overflow-auto bg-background text-white">
+  <aside class="h-screen w-[338px] basis-navtab bg-foreground py-[40px] px-[20px]">
+    <h1 class="font-semibold text-2xl">ADMIN DASHBOARD</h1>
+    <nav class="pt-[52px] text-xl font-light">
+      <a class="flex gap-[43px] items-center pt-[24px] pb-[25px]">
+        <div class="basis-[26px]"><mat-icon class="text-3xl block" aria-hidden="false" aria-label="Admin icon" fontIcon="account_circle"></mat-icon></div>
+        <div>Admin management</div>
+      </a>
+      <a class="flex gap-[43px] items-center pt-[24px] pb-[25px]">
+        <div class="basis-[26px]"><mat-icon class="text-3xl block" aria-hidden="false" aria-label="Admin icon" fontIcon="manage_accounts"></mat-icon></div>
+        <div>Users management</div>
+      </a>
+      <a class="flex gap-[43px] items-center pt-[24px] pb-[25px]">
+        <div class="basis-[26px]"><mat-icon class="text-3xl block" aria-hidden="false" aria-label="Admin icon" fontIcon="lyrics"></mat-icon></div>
+        <div>Publish requests</div>
+      </a>
+    </nav>
+  </aside>
+  <main class="py-[53px] px-[57px]">
+    <router-outlet></router-outlet>
+  </main>
+</div>
