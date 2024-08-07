@@ -12,7 +12,12 @@ module.exports = {
       },
       flexBasis: {
         'navtab': '338px'
-      }
+      },
+      borderColor: {
+        'background': '#121212',
+        'foreground': '#5F29B8',
+        'pop': '#B52626'
+      },
     },
   },
   plugins: [],
