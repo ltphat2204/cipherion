@@ -10,14 +10,9 @@ import { AdminUser, BusinessService } from '../business.service';
   styleUrl: './view.component.css'
 })
 export class AdminViewComponent {
+  admins: AdminUser[] = [];
+
   constructor(private biz: BusinessService) {
-  }
-
-  get adminList() {
-    return this.biz.getAdminList()
-  }
-
-  addAdmin(user: AdminUser) {
-    this.biz.addAdmin(user)
+    this.admins = this.biz.getAdminList();
   }
 }

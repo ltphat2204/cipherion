@@ -1,1 +1,19 @@
 <app-search></app-search>
+<table class="table-fixed border-collapse border-spacing-4 mx-auto mt-8 caption-top shadow-md">
+    <thead>
+        <tr>
+            <th class="border border-slate-100 px-8 py-4 bg-foreground ">Username</th>
+            <th class="border border-slate-100 px-8 py-4 bg-foreground">Created At</th>
+            <th class="border border-slate-100 px-8 py-4 bg-foreground">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of admins; track $index) {
+            <tr>
+                <td class="border border-slate-50 px-8 py-4">{{item.username}}</td>
+                <td class="border border-slate-50 px-8 py-4">{{item.created_at}}</td>
+                <td class="border border-slate-50 px-8 py-4">Remove | Reset Password</td>
+            </tr>
+        }
+    </tbody>
+</table>
