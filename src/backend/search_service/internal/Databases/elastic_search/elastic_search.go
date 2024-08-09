@@ -12,6 +12,7 @@ func Connect() (*elasticsearch.TypedClient, error) {
 		log.Fatal("Error loading .env file")
 	}
 	elasticURL := os.Getenv("ELASTIC_URL")
+	log.Println(elasticURL)
 	es, err := elasticsearch.NewTypedClient(elasticsearch.Config{
 		Addresses: []string{fmt.Sprintf("http://%s", elasticURL)},
 	})
