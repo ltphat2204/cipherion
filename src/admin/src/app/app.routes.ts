@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminViewComponent } from './admin/view/view.component';
+import { UserViewComponent } from './user/view/view.component';
 
 
 export const routes: Routes = [
@@ -17,7 +18,7 @@ export const routes: Routes = [
             },
             {
                 path: 'users',
-                component: AdminViewComponent
+                component: UserViewComponent
             },
             {
                 path: 'publish',
