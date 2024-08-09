@@ -14,7 +14,7 @@ services:
 #      - 9200:9200
   search_service:
     container_name: search_service
-    build: .
+    image: "phongvt2004/search_service"
     networks:
       - es-net
     ports:
