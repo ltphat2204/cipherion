@@ -8,5 +8,6 @@ WORKDIR /app
 # Download Go modules
 COPY . .
 RUN go mod download
+ENV
 RUN go build /app/cmd/server/main.go
 CMD ["/app/main"]
