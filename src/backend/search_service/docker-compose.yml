@@ -8,17 +8,23 @@ services:
       - "discovery.type=single-node"
     networks:
       - es-net
-    volumes:
-      - ./esdata:/usr/share/elasticsearch/data
-#    ports:
-#      - 9200:9200
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 1g
+#    volumes:
+#      - ./esdata:/usr/share/elasticsearch/data
+    ports:
+      - 80:9200
   search_service:
     container_name: search_service
     image: "phongvt2004/search_service"
     networks:
       - es-net
+    env_file: ".env"
     ports:
-      - 3000:3000
+      - 80:3000
     depends_on:
       - elasticsearch
 networks:
