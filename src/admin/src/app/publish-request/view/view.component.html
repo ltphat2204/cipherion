@@ -1,0 +1,15 @@
+<app-search></app-search>
+<div class="mt-8"></div>
+
+@for (request of requests; track $index) {
+    <requests-card 
+        [id]="request.id"
+        [artist]="request.artist"
+        [coverImage]="request.coverImage"
+        [url]="request.url"
+        [genre]="request.genre"
+        [songName]="request.songName"
+        [user]="request.user"
+        [time]="request.time"
+    ></requests-card>
+}

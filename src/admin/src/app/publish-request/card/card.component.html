@@ -1,0 +1,22 @@
+<div class="bg-card-green/50 pt-[24px] pb-[34px] pl-[34px] pr-[45px] rounded-xl">
+    <div class="flex justify-between">
+        <div class="flex items-center gap-8 pb-[25px]">
+            <div class="h-[128px] w-auto"><img class="w-auto h-full rounded-xl" [src]="coverImage"/></div>
+            <div class="text-4xl">{{artist}}</div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="px-8 py-2 bg-green-700 h-fit rounded-xl">Accept</div>
+            <div class="px-8 py-2 bg-red-700 h-fit rounded-xl">Decline</div>
+        </div>
+    </div>
+    <div class="flex justify-between py-[41px] px-[44px] bg-background rounded-xl">
+        <div>
+            <div class="text-2xl">Name: {{songName}}</div>
+            <div class="text-lg">Genre: {{genre}}</div>
+            <div class="text-base">Request date: {{formattedDate | date:'medium'}}</div>
+        </div>
+        <a target="_blank" rel="noopener noreferrer" [href]="url" class="h-full">
+            <mat-icon style="height: 48px !important; width: 48px !important;" class="text-6xl" fontIcon="download"></mat-icon>
+        </a>
+    </div>
+</div>

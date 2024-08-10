@@ -1,1 +1,0 @@
-export const environment = {"projectId":"lyrica-a289d","appId":"1:205389391625:web:68c067f45a95c2de7415d8","storageBucket":"lyrica-a289d.appspot.com","locationId":"asia-southeast2","apiKey":"AIzaSyAKQckhT44uVkbZZgOXidTKMl-55QpQ_fI","authDomain":"lyrica-a289d.firebaseapp.com","messagingSenderId":"205389391625"}
