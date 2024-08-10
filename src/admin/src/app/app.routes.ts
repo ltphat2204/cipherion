@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminViewComponent } from './admin/view/view.component';
 import { UserViewComponent } from './user/view/view.component';
+import { PublishViewComponent } from './publish-request/view/view.component';
 
 
 export const routes: Routes = [
@@ -22,7 +23,7 @@ export const routes: Routes = [
             },
             {
                 path: 'publish',
-                component: AdminViewComponent
+                component: PublishViewComponent
             }
         ]
     }
