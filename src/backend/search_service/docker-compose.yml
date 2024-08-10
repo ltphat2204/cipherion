@@ -13,8 +13,8 @@ services:
         soft: -1
         hard: -1
     mem_limit: 1g
-#    volumes:
-#      - ./esdata:/usr/share/elasticsearch/data
+    volumes:
+      - esdata01:/usr/share/elasticsearch/data
     ports:
       - 80:9200
   search_service:
@@ -30,3 +30,6 @@ services:
 networks:
   es-net:
     driver: bridge
+volumes:
+  esdata01:
+    driver: local
