@@ -9,6 +9,7 @@ import (
 	"github.com/elastic/go-elasticsearch/v8/typedapi/types/enums/icunormalizationmode"
 	"github.com/elastic/go-elasticsearch/v8/typedapi/types/enums/icunormalizationtype"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	_ "github.com/swaggo/echo-swagger"
 	"log"
 	_ "search_service/docs"
@@ -36,19 +37,28 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error creating the client: %s", err)
 	}
+	//log.Println("ok")
+
 	server := echo.New()
+	//log.Println("ok")
 
-	for index, mapping := range mappingList() {
-		err := CreateIndex(es, index, mapping, ctx)
-
-		if err != nil {
-			log.Printf("Error creating index: %s", err.Error())
-		}
-	}
+	server.Use(middleware.CORSWithConfig(middleware.DefaultCORSConfig))
+	//for index, mapping := range mappingList() {
+	//	log.Println("ok")
+	//
+	//	err := CreateIndex(es, index, mapping, ctx)
+	//
+	//	if err != nil {
+	//		log.Printf("Error creating index: %s", err.Error())
+	//	}
+	//	log.Println("ok")
+	//}
+	log.Println("ok")
 	songSearch := Services.NewSongSearch(es)
 	route.RoutingSong(server, songSearch, ctx)
 	err = server.Start(":3000")
 	log.Fatal(err)
+	log.Println("ok")
 }
 
 func CreateIndex(es *elasticsearch.TypedClient, name string, mapping *types.TypeMapping, ctx context.Context) error {
