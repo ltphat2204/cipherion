@@ -1,0 +1,27 @@
+services:
+  model_builder:
+    container_name: model_builder
+    build:
+      context: .
+      dockerfile: ./deployment/train_model/Dockerfile
+    env_file: ".env"
+    networks:
+      - recommend-net
+    volumes:
+      - ./model:/app/model
+  recommender:
+    container_name: recommender
+    build:
+      context: .
+      dockerfile: ./deployment/recommender/Dockerfile
+    env_file: ".env"
+    networks:
+      - recommend-net
+    volumes:
+      - ./model:/app/model
+    ports:
+      - 5000:5000
+
+networks:
+  recommend-net:
+    driver: bridge
