@@ -41,3 +41,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+src\frontend\lyrica_ver2\lib\firebase_options.dart
