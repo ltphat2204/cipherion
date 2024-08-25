@@ -1,6 +1,5 @@
-import { Time } from '@angular/common';
 import { Injectable } from '@angular/core';
-import { Firestore, collection, query, where, collectionData } from '@angular/fire/firestore';
+import { Firestore, collection, query, where, collectionData, doc, updateDoc, deleteDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -29,5 +28,15 @@ export class BusinessService {
     return collectionData(q, { idField: 'id' }).pipe(
       map(requests => requests as Request[])
     );
+  }
+
+  acceptRequest(id: string): Promise<void> {
+    const requestDoc = doc(this.firestore, 'uploads', id);
+    return updateDoc(requestDoc, { isChecked: true });
+  }
+
+  rejectRequest(id: string): Promise<void> {
+    const requestDoc = doc(this.firestore, 'uploads', id);
+    return deleteDoc(requestDoc);
   }
 }

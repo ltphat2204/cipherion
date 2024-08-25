@@ -5,8 +5,8 @@
             <div class="text-4xl">{{artist}}</div>
         </div>
         <div class="flex items-center gap-4">
-            <div class="px-8 py-2 bg-green-700 h-fit rounded-xl">Accept</div>
-            <div class="px-8 py-2 bg-red-700 h-fit rounded-xl">Decline</div>
+            <div class="px-8 py-2 bg-green-700 h-fit rounded-xl cursor-pointer" (click)="acceptRequest()">Accept</div>
+            <div class="px-8 py-2 bg-red-700 h-fit rounded-xl cursor-pointer" (click)="rejectRequest()">Decline</div>
         </div>
     </div>
     <div class="flex justify-between py-[41px] px-[44px] bg-background rounded-xl">
